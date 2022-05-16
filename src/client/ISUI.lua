@@ -4,6 +4,7 @@ Exports.InterpolationPeriodDebug = loadstring('return InterpolationPeriodDebug')
 Exports.InterpolationPlayerPeriodDebug = loadstring('return InterpolationPlayerPeriodDebug')();
 Exports.ISAlarmClockDialog = loadstring('return ISAlarmClockDialog')();
 Exports.ISBackButtonWheel = loadstring('return ISBackButtonWheel')();
+Exports.ISBBQInfoWindow = loadstring('return ISBBQInfoWindow')();
 
 Exports.ISButton = loadstring('return ISButton')();
 Exports.ISCollapsableWindow = loadstring('return ISCollapsableWindow')();
