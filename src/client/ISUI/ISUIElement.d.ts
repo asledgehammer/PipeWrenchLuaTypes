@@ -11,7 +11,7 @@ declare module 'ISUI' {
         ID: number;
 
         controller: any;
-        joyFocus: any | null;
+        joyFocus: JoyFocus;
 
         x: number;
         y: number;
