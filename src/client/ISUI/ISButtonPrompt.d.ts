@@ -13,20 +13,50 @@ declare module 'ISUI' {
     export class ISButtonPromptInstance extends ISUIElementInstance {
         protected constructor();
 
-        background: boolean;
+        list: LuaListInstance;
+        movableIconPickup: Texture;
+        movableIconPlace: Texture;
+        movableIconRotate: Texture;
+        movableIconScrap: Texture;
         backgroundColor: ISUIColor;
         borderColor: ISUIColor;
-        player: IsoPlayer;
+        player: number; 
         buttonA: number;
         buttonB: number;
         buttonX: number;
         buttonY: number;
         buttonLB: number;
         buttonRB: number;
-        movableIconPickup: Texture;
-        movableIconPlace: Texture;
-        movableIconRotate: Texture;
-        movableIconScrap: Texture;
+        x1: number;
+        y1: number;
+        w1: number;
+        h1: number;
+        x2: number;
+        y2: number;
+        w2: number;
+        h2: number;
+        lmargin: number;
+        rmargin: number;
+        aPrompt: string;
+        aFunc: Function;
+        aParams: any[];
+        bPrompt: string;
+        bFunc: Function;
+        bParams: any[];
+        xPrompt: string;
+        xFunc: Function;
+        xParams: any[];
+        yPrompt: string;
+        yFunc: Function;
+        yParams: any[];
+        lbPrompt: string;
+        lbFunc: Function;
+        lbParams: any[];
+        rbPrompt: string;
+        rbFunc: Function;
+        rbParams: any[];
+        isLoot: boolean;
+        background: boolean;
 
         getTopOf(): number;
         isLootIcon(): boolean;
@@ -66,18 +96,18 @@ declare module 'ISUI' {
         onYPress(): void;
         onLBPress(): void;
         onRBPress(): void;
-        setAPrompt(prompt: string, func: any, param1: any, param2: any, param3: any, param4: any): void;
-        setBPrompt(prompt: string, func: any, param1: any, param2: any, param3: any, param4: any): void;
-        setXPrompt(prompt: string, func: any, param1: any, param2: any, param3: any, param4: any): void;
-        setYPrompt(prompt: string, func: any, param1: any, param2: any, param3: any, param4: any): void;
-        setLBPrompt(prompt: string, func: any, param1: any, param2: any, param3: any, param4: any): void;
-        setRBPrompt(prompt: string, func: any, param1: any, param2: any, param3: any, param4: any): void;
+        setAPrompt(prompt: string, func: Function, param1: any, param2: any, param3: any, param4: any): void;
+        setBPrompt(prompt: string, func: Function, param1: any, param2: any, param3: any, param4: any): void;
+        setXPrompt(prompt: string, func: Function, param1: any, param2: any, param3: any, param4: any): void;
+        setYPrompt(prompt: string, func: Function, param1: any, param2: any, param3: any, param4: any): void;
+        setLBPrompt(prompt: string, func: Function, param1: any, param2: any, param3: any, param4: any): void;
+        setRBPrompt(prompt: string, func: Function, param1: any, param2: any, param3: any, param4: any): void;
         onJoypadButtonReleased(button: ISButtonInstance): void;
     }
 
     export class ISButtonPrompt {
         private constructor();
 
-        static new(player: IsoPlayer): ISButtonPromptInstance;
+        static new(player: number): ISButtonPromptInstance;
     }
 }
