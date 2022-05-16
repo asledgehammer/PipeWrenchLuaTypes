@@ -12,6 +12,7 @@ Exports.ISButtonPrompt = loadstring('return ISButtonPrompt')();
 Exports.ISCollapsableModalRichText = loadstring('return ISCollapsableModalRichText')();
 Exports.ISCollapsableWindow = loadstring('return ISCollapsableWindow')();
 Exports.ISCollapsableWindowJoypad = loadstring('return ISCollapsableWindowJoypad')();
+Exports.ISComboBox = loadstring('return ISComboBox')();
 
 Exports.ISLabel = loadstring('return ISLabel')();
 Exports.ISPanel = loadstring('return ISPanel')();
