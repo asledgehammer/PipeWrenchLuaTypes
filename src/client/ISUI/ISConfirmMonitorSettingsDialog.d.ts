@@ -1,10 +1,8 @@
-import { zombie } from "Zomboid";
-
 declare module 'ISUI' {
     export class ISConfirmMonitorSettingsDialogInstance extends ISModalDialogInstance {
         protected constructor();
 
-
+        startTime: number;
     }
 
     export class ISConfirmMonitorSettingsDialog {
@@ -18,6 +16,6 @@ declare module 'ISUI' {
             callback: Function,
             param1: any,
             param2: any
-            ): ISConfirmMonitorSettingsDialogInstance;
+        ): ISConfirmMonitorSettingsDialogInstance;
     }
 }
