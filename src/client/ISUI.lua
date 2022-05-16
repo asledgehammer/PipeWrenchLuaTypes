@@ -18,6 +18,7 @@ Exports.ISComboBoxPopup = loadstring('return ISComboBoxPopup')();
 Exports.ISConfirmMonitorSettingsDialog = loadstring('return ISConfirmMonitorSettingsDialog')();
 
 Exports.ISLabel = loadstring('return ISLabel')();
+Exports.ISModalDialog = loadstring('return ISModalDialog')();
 Exports.ISPanel = loadstring('return ISPanel')();
 Exports.ISPanelJoypad = loadstring('return ISPanelJoypad')();
 Exports.ISRadialMenu = loadstring('return ISRadialMenu')();
