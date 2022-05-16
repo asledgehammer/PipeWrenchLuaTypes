@@ -10,8 +10,9 @@ Exports.ISBombTimerDialog = loadstring('return ISBombTimerDialog')();
 Exports.ISButton = loadstring('return ISButton')();
 Exports.ISButtonPrompt = loadstring('return ISButtonPrompt')();
 Exports.ISCollapsableModalRichText = loadstring('return ISCollapsableModalRichText')();
-
 Exports.ISCollapsableWindow = loadstring('return ISCollapsableWindow')();
+Exports.ISCollapsableWindowJoypad = loadstring('return ISCollapsableWindowJoypad')();
+
 Exports.ISLabel = loadstring('return ISLabel')();
 Exports.ISPanel = loadstring('return ISPanel')();
 Exports.ISPanelJoypad = loadstring('return ISPanelJoypad')();
