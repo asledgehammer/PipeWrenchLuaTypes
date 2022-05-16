@@ -1,9 +1,9 @@
 declare module 'DebugUIs/DebugMenu' {
-    import { ISPanelInstance, ISUIElementInstance, ISUIColor } from 'ISUI';
+    import { ISPanelInstance, ISUIElementInstance, RGBA } from 'ISUI';
 
     export type ValuePlotterVariable = {
         name: string,
-        color: ISUIColor,
+        color: RGBA,
         min: number,
         max: number,
         diff: number,
@@ -18,10 +18,10 @@ declare module 'DebugUIs/DebugMenu' {
         x: number;
         y: number;
         background: boolean;
-        backgroundColor: ISUIColor;
-        borderColor: ISUIColor;
-        gridColor: ISUIColor;
-        greyCol: ISUIColor;
+        backgroundColor: RGBA;
+        borderColor: RGBA;
+        gridColor: RGBA;
+        greyCol: RGBA;
         width: number;
         height: number;
         anchorLeft: boolean;
@@ -52,8 +52,8 @@ declare module 'DebugUIs/DebugMenu' {
         getVarCount(): number;
         clearHistory(): void;
         setVariableEnabled(name: string, bool: boolean): void;
-        defineVariable(name: string, color: ISUIColor, minVal: number, maxVal: number): void;
-        setHorzLine(value: any, col: ISUIColor): void;
+        defineVariable(name: string, color: RGBA, minVal: number, maxVal: number): void;
+        setHorzLine(value: any, col: RGBA): void;
         unsetHorzLine(index: number): void;
     }
 

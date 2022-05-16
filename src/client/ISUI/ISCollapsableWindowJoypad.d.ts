@@ -6,7 +6,7 @@ declare module 'ISUI' {
     export class ISCollapsableWindowJoypadInstance extends ISPanelJoypadInstance {
         protected constructor();
 
-        widgetTextureColor: ISUIColor;
+        widgetTextureColor: RGBA;
         titlebarbkg: Texture;
         statusbarbkg: Texture;
         resizeimage: Texture;

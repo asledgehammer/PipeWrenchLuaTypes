@@ -18,8 +18,8 @@ declare module 'ISUI' {
         movableIconPlace: Texture;
         movableIconRotate: Texture;
         movableIconScrap: Texture;
-        backgroundColor: ISUIColor;
-        borderColor: ISUIColor;
+        backgroundColor: RGBA;
+        borderColor: RGBA;
         player: number; 
         buttonA: number;
         buttonB: number;
