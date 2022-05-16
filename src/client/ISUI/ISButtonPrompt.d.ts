@@ -1,14 +1,14 @@
-declare module 'ISUI' {
+import { zombie } from 'Zomboid';
+type IsoPlayer = zombie.characters.IsoPlayer;
+type Texture = zombie.core.textures.Texture;
+type IsoDirections = zombie.iso.IsoDirections;
+type IsoObject = zombie.iso.IsoObject;
+type IsoDoor = zombie.iso.objects.IsoDoor;
+type IsoWindow = zombie.iso.objects.IsoWindow;
+type BaseVehicle = zombie.vehicles.BaseVehicle;
+type VehiclePart = zombie.vehicles.VehiclePart;
 
-    import { zombie } from 'Zomboid';
-    type IsoPlayer = zombie.characters.IsoPlayer;
-    type Texture = zombie.core.textures.Texture;
-    type IsoDirections = zombie.iso.IsoDirections;
-    type IsoObject = zombie.iso.IsoObject;
-    type IsoDoor = zombie.iso.objects.IsoDoor;
-    type IsoWindow = zombie.iso.objects.IsoWindow;
-    type BaseVehicle = zombie.vehicles.BaseVehicle;
-    type VehiclePart = zombie.vehicles.VehiclePart;
+declare module 'ISUI' {
 
     export class ISButtonPromptInstance extends ISUIElementInstance {
         protected constructor();
