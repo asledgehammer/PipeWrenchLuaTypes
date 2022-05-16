@@ -6,6 +6,7 @@ Exports.ISAlarmClockDialog = loadstring('return ISAlarmClockDialog')();
 Exports.ISBackButtonWheel = loadstring('return ISBackButtonWheel')();
 Exports.ISBBQInfoWindow = loadstring('return ISBBQInfoWindow')();
 Exports.ISBBQWindow = loadstring('return ISBBQWindow')();
+Exports.ISBombTimerDialog = loadstring('return ISBombTimerDialog')();
 
 Exports.ISButton = loadstring('return ISButton')();
 Exports.ISCollapsableWindow = loadstring('return ISCollapsableWindow')();
