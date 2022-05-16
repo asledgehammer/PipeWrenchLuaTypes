@@ -15,6 +15,7 @@ Exports.ISCollapsableWindowJoypad = loadstring('return ISCollapsableWindowJoypad
 Exports.ISComboBox = loadstring('return ISComboBox')();
 Exports.ISComboBoxEditor = loadstring('return ISComboBoxEditor')();
 Exports.ISComboBoxPopup = loadstring('return ISComboBoxPopup')();
+Exports.ISConfirmMonitorSettingsDialog = loadstring('return ISConfirmMonitorSettingsDialog')();
 
 Exports.ISLabel = loadstring('return ISLabel')();
 Exports.ISPanel = loadstring('return ISPanel')();
