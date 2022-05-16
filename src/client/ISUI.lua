@@ -7,8 +7,9 @@ Exports.ISBackButtonWheel = loadstring('return ISBackButtonWheel')();
 Exports.ISBBQInfoWindow = loadstring('return ISBBQInfoWindow')();
 Exports.ISBBQWindow = loadstring('return ISBBQWindow')();
 Exports.ISBombTimerDialog = loadstring('return ISBombTimerDialog')();
-
 Exports.ISButton = loadstring('return ISButton')();
+Exports.ISButtonPrompt = loadstring('return ISButtonPrompt')();
+
 Exports.ISCollapsableWindow = loadstring('return ISCollapsableWindow')();
 Exports.ISLabel = loadstring('return ISLabel')();
 Exports.ISPanel = loadstring('return ISPanel')();
