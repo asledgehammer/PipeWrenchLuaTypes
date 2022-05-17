@@ -1,5 +1,3 @@
-import { zombie } from 'Zomboid';
-
 declare module 'ISUI' {
     export class ISDemoPopupInstance extends ISPanelInstance {
         protected constructor();
