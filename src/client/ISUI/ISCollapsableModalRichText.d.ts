@@ -1,15 +1,19 @@
-import { zombie } from "Zomboid";
+import { zombie } from 'Zomboid';
 type IsoPlayer = zombie.characters.IsoPlayer;
 
 declare module 'ISUI' {
-
-    export type ISCollapsableModalRichTextOnClickFunction = (target: any, button: ISButtonInstance, param1: any, param2: any) => void;
+    export type ISCollapsableModalRichTextOnClickFunction = (
+        target: any,
+        button: ISButtonInstance,
+        param1: any,
+        param2: any
+    ) => void;
 
     export class ISCollapsableModalRichTextInstance extends ISCollapsableWindowInstance {
         protected constructor();
 
         onclick: ISCollapsableModalRichTextOnClickFunction;
-        name: string | null;
+        name: string;
         text: string;
         yesno: boolean;
         target: any;
@@ -34,12 +38,11 @@ declare module 'ISUI' {
             y: number,
             width: number,
             height: number,
-            text: string, 
+            text: string,
             yesno: boolean,
             target: any,
             onclick: ISCollapsableModalRichTextOnClickFunction,
-            player: IsoPlayer,
-
+            player: IsoPlayer
         ): ISCollapsableModalRichTextInstance;
     }
 }
