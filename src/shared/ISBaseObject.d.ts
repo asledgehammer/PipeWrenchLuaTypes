@@ -1,12 +1,14 @@
-export class ISBaseObjectInstance {
-    protected constructor();
+declare module 'shared' {
+    export class ISBaseObjectInstance {
+        protected constructor();
 
-    initialise(): void;
-    derive(type: string): any;
-}
+        initialise(): void;
+        derive(type: string): any;
+    }
 
-export class ISBaseObject {
-    private constructor();
+    export class ISBaseObject {
+        private constructor();
 
-    static new(): ISBaseObjectInstance;
+        static new(): ISBaseObjectInstance;
+    }
 }
