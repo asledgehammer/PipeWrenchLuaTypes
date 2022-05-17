@@ -1,6 +1,7 @@
-declare module 'ISUI' {
-    import { zombie } from 'Zomboid';
+import { zombie } from 'Zomboid';
+type IsoPlayer = zombie.characters.IsoPlayer;
 
+declare module 'ISUI' {
     export class ISBombTimerDialogInstance extends ISPanelJoypadInstance {
         protected constructor();
 
@@ -13,11 +14,11 @@ declare module 'ISUI' {
         textBox: ISTextEntryBoxInstance;
         yes: ISButtonInstance;
         no: ISButtonInstance;
-        player: zombie.characters.IsoPlayer;
+        player: IsoPlayer;
         playerNum: number;
         playerX: number;
         playerY: number;
-        name: string | null;
+        name: string;
         prompt: string;
         time: number;
         target: any;
@@ -43,7 +44,7 @@ declare module 'ISUI' {
             height: number,
             prompt: string,
             time: number,
-            player: zombie.characters.IsoPlayer,
+            player: IsoPlayer,
             target: any,
             targetFunc: any,
             param1: any,
