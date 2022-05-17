@@ -19,12 +19,12 @@ declare module 'ISUI' {
         isCollapsed: boolean;
         collapseCounter: number;
         title: string;
-        viewList: {};
         resizable: boolean;
         drawFrame: boolean;
         clearStentil: boolean;
         titleFont: UIFont;
         titleFontHgt: number;
+        viewList: any; /* Unknown */
     }
 
     export class ISCollapsableWindowJoypad {
