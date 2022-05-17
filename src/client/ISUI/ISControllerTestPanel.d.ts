@@ -1,16 +1,15 @@
 declare module 'ISUI' {
-    
     export type ISControllerTestPanelMainOptions = {
         labelJoypadSensitivity: ISLabelInstance;
         btnJoypadSensitivityP: ISButtonInstance;
         btnJoypadSensitivityM: ISButtonInstance;
-    }
-    
+    };
+
     export class ISControllerTestPanelInstance extends ISPanelInstance {
         protected constructor();
 
         combo: ISComboBoxInstance;
-        axisY: {} | number;
+        axisY: number;
         axisLabelWid: number;
         axisHgt: number;
         axisPadY: number;
