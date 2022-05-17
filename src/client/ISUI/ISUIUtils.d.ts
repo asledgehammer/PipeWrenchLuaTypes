@@ -20,4 +20,6 @@ declare module 'ISUI' {
         isActive: boolean;
         id: number;
     };
+
+    export type JoypadData = any;
 }
