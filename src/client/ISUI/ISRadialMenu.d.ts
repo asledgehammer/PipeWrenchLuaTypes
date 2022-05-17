@@ -1,29 +1,30 @@
-declare module 'ISUI' {
-    import { zombie } from 'Zomboid';
+import { zombie } from 'Zomboid';
+type Texture = zombie.core.textures.Texture;
+type RadialMenu = zombie.ui.RadialMenu;
 
+declare module 'ISUI' {
     export type ISRadialMenuSliceCommand = {
-            command: string,
-            arg1: any,
-            arg2: any,
-            arg3: any,
-            arg4: any,
-            arg5: any,
-            arg6: any
+        command: string;
+        arg1: any;
+        arg2: any;
+        arg3: any;
+        arg4: any;
+        arg5: any;
+        arg6: any;
     };
+
     export type ISRadialMenuSlice = {
-        text: string,
-        texture: zombie.core.textures.Texture | null,
-        command: ISRadialMenuSliceCommand
+        text: string;
+        texture: Texture;
+        command: ISRadialMenuSliceCommand;
     };
 
     export class ISRadialMenuInstance extends ISPanelJoypadInstance {
         protected constructor();
 
-        javaObject: zombie.ui.RadialMenu;
-
-        slices: {[offset: number]: ISRadialMenuSlice};
+        slices: { [offset: number]: ISRadialMenuSlice };
+        javaObject: RadialMenu;
         hideWhenButtonReleased: ISButtonInstance;
-
         innerRadius: number;
         outerRadius: number;
         playerNum: number;
@@ -32,9 +33,19 @@ declare module 'ISUI' {
         onMouseDown(x: number, y: number): void;
         onMouseDownOutside(x: number, y: number): void;
         clear(): void;
-        addSlice(text: string, texture: zombie.core.textures.Texture | null, command: string, arg1: any, arg2: any, arg3: any, arg4: any, arg5: any, arg6: any): void;
+        addSlice(
+            text: string,
+            texture: Texture,
+            command: string,
+            arg1: any,
+            arg2: any,
+            arg3: any,
+            arg4: any,
+            arg5: any,
+            arg6: any
+        ): void;
         setSliceText(sliceIndex: number, text: string): void;
-        setSliceTexture(sliceIndex: number, texture: zombie.core.textures.Texture | null): void;
+        setSliceTexture(sliceIndex: number, texture: Texture): void;
         getSliceCommand(sliceIndex: number): ISRadialMenuSliceCommand;
         center(): void;
         onGainJoypadFocus(joypadData: any): void;
