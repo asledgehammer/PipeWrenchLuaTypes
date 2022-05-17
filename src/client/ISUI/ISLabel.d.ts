@@ -1,6 +1,7 @@
-declare module 'ISUI' {
-    import { zombie } from 'Zomboid';
+import { zombie } from 'Zomboid';
+type UIFont = zombie.ui.UIFont;
 
+declare module 'ISUI' {
     export class ISLabelInstance extends ISUIElementInstance {
         protected constructor();
 
@@ -22,21 +23,7 @@ declare module 'ISUI' {
 
     export class ISLabel {
         private constructor();
-        
-        /**
-         * @param x (double)
-         * @param y (double)
-         * @param height (double)
-         * @param name (string)
-         * @param r (double)
-         * @param g (double)
-         * @param b (double)
-         * @param a (double)
-         * @param font (zombie.ui.UIFont)
-         * @param bLeft (boolean)
-         *
-         * @returns The new ISLabel instance.
-         */
+
         static new(
             x: number,
             y: number,
@@ -46,7 +33,7 @@ declare module 'ISUI' {
             g: number,
             b: number,
             a: number,
-            font: zombie.ui.UIFont | null,
+            font: UIFont,
             bLeft: boolean
         ): ISLabelInstance;
     }
