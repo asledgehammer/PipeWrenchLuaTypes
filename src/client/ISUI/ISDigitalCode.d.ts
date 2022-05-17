@@ -25,7 +25,7 @@ declare module 'ISUI' {
         button3m: ISButtonInstance;
         ok: ISButtonInstance;
         character: IsoPlayer;
-        name: string | null;
+        name: string;
         target: any; /* Unknown */
         onclick: ISDigitalCodeOnClickFunction;
         player: number;
