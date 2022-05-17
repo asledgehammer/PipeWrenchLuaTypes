@@ -36,6 +36,6 @@ declare module 'ISUI' {
     export class ISColorPicker {
         private constructor();
 
-        static new(x: number, y: number, hsbFactor: HSBFactor): ISColorPickerInstance;
+        static new(x: number, y: number, hsbFactor: HSB): ISColorPickerInstance;
     }
 }

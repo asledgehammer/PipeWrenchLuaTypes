@@ -9,7 +9,7 @@ declare module 'ISUI' {
         a: number;
     };
 
-    export type HSBFactor = {
+    export type HSB = {
         h: number,
         s: number,
         b: number
