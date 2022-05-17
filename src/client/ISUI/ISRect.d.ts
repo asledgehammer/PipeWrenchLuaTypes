@@ -1,10 +1,10 @@
 declare module 'ISUI' {
     export class ISRectInstance extends ISUIElementInstance {
         protected constructor();
-        a: number;
         r: number;
         g: number;
         b: number;
+        a: number;
     }
 
     export class ISRect {
