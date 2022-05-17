@@ -1,103 +1,91 @@
-declare module 'ISUI' {
-    import { zombie } from 'Zomboid';
+import { zombie } from 'Zomboid';
+type Texture = zombie.core.textures.Texture;
+type UIFont = zombie.ui.UIFont;
+type UITransition = zombie.ui.UITransition;
 
+declare module 'ISUI' {
     export class ISButtonInstance extends ISPanelInstance {
         protected constructor();
 
-        repeatWhilePressedFunc: ((element: ISUIElementInstance, button: ISButtonInstance) => any) | null;
-        isJoypad: boolean | null;
-        joypadTexture: zombie.core.textures.Texture | null;
-        joypadTextureWH: number;
-
+        repeatWhilePressedFunc: (element: ISUIElementInstance, button: ISButtonInstance) => any;
+        onmousedown: (target: ISUIElementInstance, button: ISButtonInstance, x: number, y: number) => void;
+        onmouseover: (target: ISUIElementInstance, self: ISButtonInstance, x: number, y: number) => void;
+        onmouseout: (target: ISUIElementInstance, self: ISButtonInstance, deltaX: number, deltaY: number) => void;
+        onclick: (
+            target: ISUIElementInstance,
+            button: ISButtonInstance,
+            arg1: any,
+            arg2: any,
+            arg3: any,
+            arg4: any
+        ) => void;
+        tooltip: string;
         enable: boolean;
+        allowMouseUpProcessing: boolean;
+        isJoypad: boolean;
+        joypadTexture: Texture;
+        joypadTextureWH: number;
         isButton: true;
-
-        allowMouseUpProcessing: boolean | null;
-
-        fade: zombie.ui.UITransition;
+        fade: UITransition;
         sounds: { [which: string]: string };
+        backgroundColorMouseOver: RGBA;
+        backgroundColorPressed: RGBA;
+        textureColor: RGBA;
+        textColor: RGBA;
+        displayBackground: boolean;
+        blinkImage: boolean;
+        blinkImageAlpha: number;
+        blinkImageAlphaIncrease: boolean;
+        blinkBG: boolean;
+        blinkBGAlpha: number;
+        blinkBGAlphaIncrease: boolean;
+        forcedWidthImage: number;
+        forcedHeightImage: number;
+        overlayText: string;
+        textureOverride: Texture;
+        font: UIFont;
+        title: string;
+        yoffset: number;
 
-        backgroundColorMouseOver: { r: number; g: number; b: number; a: number };
-        backgroundColorPressed: { r: number; g: number; b: number; a: number };
-        textureColor: { r: number; g: number; b: number; a: number };
-        textColor: { r: number; g: number; b: number; a: number };
-
-        displayBackground: boolean | null;
-        blinkImage: boolean | null;
-        blinkImageAlpha: number | null;
-        blinkImageAlphaIncrease: boolean | null;
-        blinkBG: boolean | null;
-        blinkBGAlpha: number | null;
-        blinkBGAlphaIncrease: boolean | null;
-        forcedWidthImage: number | null;
-        forcedHeightImage: number | null;
-        overlayText: string | null;
-        textureOverride: zombie.core.textures.Texture | null;
-
-        font: zombie.ui.UIFont;
-        title: string | null;
-        yoffset: number | null;
-
-        onmousedown: ((target: ISUIElementInstance, button: ISButtonInstance, x: number, y: number) => void) | null;
-        onmouseover: ((target: ISUIElementInstance, self: ISButtonInstance, x: number, y: number) => void) | null;
-        onmouseout:
-            | ((target: ISUIElementInstance, self: ISButtonInstance, deltaX: number, deltaY: number) => void)
-            | null;
-        tooltip: string | null;
-        onclick:
-            | ((
-                  target: ISUIElementInstance,
-                  button: ISButtonInstance,
-                  arg1: any | null,
-                  arg2: any | null,
-                  arg3: any | null,
-                  arg4: any | null
-              ) => void)
-            | null;
-
-        forceClick(): any | null;
-        setJoypadButton(texture: zombie.core.textures.Texture): void;
+        forceClick(): any;
+        setJoypadButton(texture: Texture): void;
         clearJoypadButton(): void;
-        setImage(image: zombie.core.textures.Texture | null): void;
+        setImage(image: Texture): void;
         forceImageSize(width: number, height: number): void;
-        setFont(font: zombie.ui.UIFont | null): void;
-        getTitle(): string | null;
-        setTitle(title: string | null): void;
+        setFont(font: UIFont): void;
+        getTitle(): string;
+        setTitle(title: string): void;
 
         setOnMouseOverFunction(
-            onmouseover: ((target: ISUIElementInstance, self: ISButtonInstance, x: number, y: number) => void) | null
+            onmouseover: (target: ISUIElementInstance, self: ISButtonInstance, x: number, y: number) => void
         ): void;
         setOnMouseOutFunction(
-            onmouseout:
-                | ((target: ISUIElementInstance, self: ISButtonInstance, deltaX: number, deltaY: number) => void)
-                | null
+            onmouseout: (target: ISUIElementInstance, self: ISButtonInstance, deltaX: number, deltaY: number) => void
         ): void;
         setDisplayBackground(background: boolean): void;
         updateTooltip(): void;
-        setRepeatWhilePressed(func: ((target: ISUIElementInstance, button: ISButtonInstance) => any) | null): void;
+        setRepeatWhilePressed(func: (target: ISUIElementInstance, button: ISButtonInstance) => any): void;
         setBackgroundRGBA(r: number, g: number, b: number, a: number): void;
         setBackgroundColorMouseOverRGBA(r: number, g: number, b: number, a: number): void;
         setBorderRGBA(r: number, g: number, b: number, a: number): void;
         setTextureRGBA(r: number, g: number, b: number, a: number): void;
         setEnable(enabled: boolean): void;
         isEnabled(): boolean;
-        setTooltip(tooltip: string | null): void;
+        setTooltip(tooltip: string): void;
         setWidthToTitle(minWidth: number, isJoypad: boolean): void;
         setOnClick(
-            onclick:
-                | ((
-                      target: ISUIElementInstance,
-                      button: ISButtonInstance,
-                      arg1: any | null,
-                      arg2: any | null,
-                      arg3: any | null,
-                      arg4: any | null
-                  ) => void)
-                | null,
-            arg1: any | null,
-            arg2: any | null,
-            arg3: any | null,
-            arg4: any | null
+            onclick: (
+                target: ISUIElementInstance,
+                button: ISButtonInstance,
+                arg1: any,
+                arg2: any,
+                arg3: any,
+                arg4: any
+            ) => void,
+            arg1: any,
+            arg2: any,
+            arg3: any,
+            arg4: any
         ): void;
         setSound(which: string, soundName: string): void;
     }
@@ -125,17 +113,15 @@ declare module 'ISUI' {
             height: number,
             title: string,
             clickTarget: ISUIElementInstance,
-            onclick:
-                | ((
-                      target: ISUIElementInstance,
-                      button: ISButtonInstance,
-                      arg1: any | null,
-                      arg2: any | null,
-                      arg3: any | null,
-                      arg4: any | null
-                  ) => void)
-                | null,
-            onmousedown: ((target: ISUIElementInstance, button: ISButtonInstance, x: number, y: number) => void) | null,
+            onclick: (
+                target: ISUIElementInstance,
+                button: ISButtonInstance,
+                arg1: any,
+                arg2: any,
+                arg3: any,
+                arg4: any
+            ) => void,
+            onmousedown: (target: ISUIElementInstance, button: ISButtonInstance, x: number, y: number) => void,
             allowMouseUpProcessing: boolean
         ): ISButtonInstance;
     }
