@@ -23,6 +23,7 @@ Exports.ISCraftingUI = loadstring('return ISCraftingUI')();
 Exports.ISDemoPopup = loadstring('return ISDemoPopup')();
 Exports.ISDigitalCode = loadstring('return ISDigitalCode')();
 Exports.ISDPadWheels = loadstring('return ISDPadWheels')();
+Exports.ISDuplicateKeybindDialog = loadstring('return ISDuplicateKeybindDialog')();
 
 Exports.ISLabel = loadstring('return ISLabel')();
 Exports.ISModalDialog = loadstring('return ISModalDialog')();
