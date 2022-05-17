@@ -1,12 +1,14 @@
-declare module 'ISUI' {
-    import { zombie } from 'Zomboid';
+import { zombie } from 'Zomboid';
+type IsoPlayer = zombie.characters.IsoPlayer;
+type AlarmClock = zombie.inventory.types.AlarmClock;
 
+declare module 'ISUI' {
     export class ISAlarmClockDialogInstance extends ISPanelJoypadInstance {
         protected constructor();
 
-        alarm: zombie.inventory.types.AlarmClock;
-        character: zombie.characters.IsoPlayer;
-        player: zombie.characters.IsoPlayer;
+        alarm: AlarmClock;
+        character: IsoPlayer;
+        player: IsoPlayer;
         playerX: number;
         playerY: number;
         anchorLeft: boolean;
@@ -15,10 +17,9 @@ declare module 'ISUI' {
         anchorBottom: boolean;
         width: number;
         height: number;
-        name: string | null;
-        backgroundColor: { r: number; g: number; b: number; a: number };
-        borderColor: { r: number; g: number; b: number; a: number };
-
+        name: string;
+        backgroundColor: RGBA;
+        borderColor: RGBA;
         button1p: ISButtonInstance;
         button1m: ISButtonInstance;
         button2p: ISButtonInstance;
@@ -30,7 +31,6 @@ declare module 'ISUI' {
         number1: ISTextEntryBoxInstance;
         number2: ISTextEntryBoxInstance;
         number3: ISTextEntryBoxInstance;
-
         joypadIndexY: number;
         joypadIndex: number;
         joypadButtons: { [offset: number]: ISButtonInstance };
@@ -58,8 +58,8 @@ declare module 'ISUI' {
             y: number,
             width: number,
             height: number,
-            player: zombie.characters.IsoPlayer,
-            alarm: zombie.inventory.types.AlarmClock
+            player: IsoPlayer,
+            alarm: AlarmClock
         ): ISAlarmClockDialogInstance;
     }
 }
