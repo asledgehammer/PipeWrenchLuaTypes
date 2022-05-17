@@ -9,19 +9,7 @@ declare module 'ISUI' {
 
     export class ISRect {
         private constructor();
-        
-        /**
-         * @param x (double)
-         * @param y (double)
-         * @param width (double)
-         * @param height (double)
-         * @param alpha (double)
-         * @param red (double)
-         * @param green (double)
-         * @param blue (double)
-         *
-         * @returns The new ISRect instance.
-         */
+
         static new(
             x: number,
             y: number,
