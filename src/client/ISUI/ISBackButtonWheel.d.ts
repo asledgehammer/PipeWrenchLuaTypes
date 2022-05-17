@@ -1,6 +1,4 @@
 declare module 'ISUI' {
-    import { zombie } from 'Zomboid';
-
     export class ISBackButtonWheelInstance extends ISRadialMenuInstance {
         protected constructor();
 
