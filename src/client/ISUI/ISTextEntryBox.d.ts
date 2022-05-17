@@ -7,16 +7,16 @@ declare module 'ISUI' {
     export class ISTextEntryBoxInstance extends ISPanelJoypadInstance {
         protected constructor();
 
-        title: string;
-        tooltip: string;
-        tooltipUI: ISToolTipInstance;
-        keepLog: boolean;
-        logIndex: number;
         font: UIFont;
         fade: UITransition;
-        currentText: string;
-        joypadFocused: ISUIElementInstance | null;
         javaObject: UITextBox2;
+        joypadFocused: ISUIElementInstance;
+        tooltipUI: ISToolTipInstance;
+        title: string;
+        tooltip: string;
+        currentText: string;
+        logIndex: number;
+        keepLog: boolean;
 
         onCommandEntered(): void;
         onTextChange(): void;
