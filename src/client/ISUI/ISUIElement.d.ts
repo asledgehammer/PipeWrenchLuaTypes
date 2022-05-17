@@ -1,18 +1,26 @@
-declare module 'ISUI' {
-    import { zombie } from 'Zomboid';
+import { zombie } from 'Zomboid';
+type Texture = zombie.core.textures.Texture;
+type UIElement = zombie.ui.UIElement;
+type UIFont = zombie.ui.UIFont;
 
+declare module 'ISUI' {
     export class ISUIElementInstance {
         protected constructor();
 
-        /* FIELDS */
-        javaObject: zombie.ui.UIElement;
-        parent: ISUIElementInstance;
+        visibleFunction: (target: ISUIElementInstance, self: ISUIElementInstance) => void;
+        onMouseDoubleClick: (x: number, y: number) => void;
         children: { [id: number]: ISUIElementInstance };
-        ID: number;
-
-        controller: any;
+        javaObject: UIElement;
+        parent: ISUIElementInstance;
+        target: ISUIElementInstance;
+        nested: ISUIElementInstance;
+        hscroll: ISScrollBar;
+        vscroll: ISScrollBar;
         joyFocus: JoyFocus;
-
+        controller: any; /* Unknown */
+        visibleTarget: any; /* Unknown */
+        dock: string;
+        ID: number;
         x: number;
         y: number;
         width: number;
@@ -21,25 +29,15 @@ declare module 'ISUI' {
         anchorRight: boolean;
         anchorTop: boolean;
         anchorBottom: boolean;
-        dock: string;
         minimumWidth: number;
         minimumHeight: number;
         scrollwidth: number;
         removed: boolean;
+        wantKeyEvents: boolean;
+        forceCursorVisible: boolean;
+        keepOnScreen: boolean;
+        enabled: boolean;
 
-        target: ISUIElementInstance | null;
-        visibleTarget: any | null;
-        visibleFunction: ((target: ISUIElementInstance, self: ISUIElementInstance) => void) | null;
-        wantKeyEvents: boolean | null;
-        forceCursorVisible: boolean | null;
-        hscroll: ISScrollBar | null;
-        vscroll: ISScrollBar | null;
-        onMouseDoubleClick: ((x: number, y: number) => void) | null;
-        nested: ISUIElementInstance | null;
-        keepOnScreen: boolean | null;
-        enabled: boolean | null;
-
-        /* METHODS */
         initialise(): void;
         setController(controller: boolean): void;
         setAnchorBottom(bAnchor: boolean): void;
@@ -153,42 +151,27 @@ declare module 'ISUI' {
         setRenderThisPlayerOnly(playerNumber: number): void;
         /** @returns (int) */
         getRenderThisPlayerOnly(): number;
-        /** @param joypadData (unknown) */
-        onLoseJoypadFocus(joypadData: ISJoypadData): void;
-        /** @param joypadData (unknown) */
-        onGainJoypadFocus(joypadData: ISJoypadData): void;
+        onLoseJoypadFocus(joypadData: JoypadData): void;
+        onGainJoypadFocus(joypadData: JoypadData): void;
 
-        /**
-         * @param visible
-         * @param _joypadData (Filler for downstream property signature)
-         */
-        setVisible(visible: boolean, _joypadData?: ISJoypadData): void;
-        getJavaObject(): zombie.ui.UIElement;
+        /** @param joypadData (Filler for downstream property signature) */
+        setVisible(visible: boolean, joypadData?: JoypadData): void;
+        getJavaObject(): UIElement;
         /** (The same as ISUIElement#isVisible()) */
         getIsVisible(): boolean;
         isVisible(): boolean;
         isReallyVisible(): boolean;
 
-        /**
-         * @param _joypadData (Filler for downstream property signature)
-         */
-        onJoypadDown(button: ISButtonInstance, _joypadData?: ISJoypadData): void;
-        /**
-         * @param _joypadData (Filler for downstream property signature)
-         */
-        onJoypadDirUp(_joypadData?: ISJoypadData): void;
-        /**
-         * @param _joypadData (Filler for downstream property signature)
-         */
-        onJoypadDirDown(_joypadData?: ISJoypadData): void;
-        /**
-         * @param _joypadData (Filler for downstream property signature)
-         */
-        onJoypadDirLeft(_joypadData?: ISJoypadData): void;
-        /**
-         * @param _joypadData (Filler for downstream property signature)
-         */
-        onJoypadDirRight(_joypadData?: ISJoypadData): void;
+        /** @param _joypadData (Filler for downstream property signature) */
+        onJoypadDown(button: ISButtonInstance, joypadData?: JoypadData): void;
+        /** @param joypadData (Filler for downstream property signature) */
+        onJoypadDirUp(joypadData?: JoypadData): void;
+        /** @param joypadData (Filler for downstream property signature) */
+        onJoypadDirDown(joypadData?: JoypadData): void;
+        /** @param joypadData (Filler for downstream property signature) */
+        onJoypadDirLeft(joypadData?: JoypadData): void;
+        /** @param joypadData (Filler for downstream property signature) */
+        onJoypadDirRight(joypadData?: JoypadData): void;
         instantiate(): void;
         createChildren(): void;
         /**
@@ -207,7 +190,7 @@ declare module 'ISUI' {
          * @param alpha (double)
          */
         drawTextureAllPoint(
-            texture: zombie.core.textures.Texture | null,
+            texture: Texture,
             texLX: number,
             texLY: number,
             texRX: number,
@@ -233,7 +216,7 @@ declare module 'ISUI' {
          * @param blue (double)
          */
         drawTextureScaled(
-            texture: zombie.core.textures.Texture | null,
+            texture: Texture,
             x: number,
             y: number,
             width: number,
@@ -254,7 +237,7 @@ declare module 'ISUI' {
          * @param blue (double)
          */
         drawTextureScaledUniform(
-            texture: zombie.core.textures.Texture | null,
+            texture: Texture,
             x: number,
             y: number,
             scale: number,
@@ -275,7 +258,7 @@ declare module 'ISUI' {
          * @param blue (double)
          */
         drawTextureScaledAspect(
-            texture: zombie.core.textures.Texture | null,
+            texture: Texture,
             x: number,
             y: number,
             width: number,
@@ -285,7 +268,6 @@ declare module 'ISUI' {
             green: number,
             blue: number
         ): void;
-
         /**
          * @param texture
          * @param x (double)
@@ -298,7 +280,7 @@ declare module 'ISUI' {
          * @param blue (double)
          */
         drawTextureScaledAspect2(
-            texture: zombie.core.textures.Texture | null,
+            texture: Texture,
             x: number,
             y: number,
             width: number,
@@ -319,7 +301,7 @@ declare module 'ISUI' {
          * @param blue (double)
          */
         drawTexture(
-            texture: zombie.core.textures.Texture | null,
+            texture: Texture,
             x: number,
             y: number,
             alpha: number,
@@ -328,7 +310,7 @@ declare module 'ISUI' {
             blue: number
         ): void;
         drawTextureTiledX(
-            texture: zombie.core.textures.Texture | null,
+            texture: Texture,
             x: number,
             y: number,
             width: number,
@@ -339,7 +321,7 @@ declare module 'ISUI' {
             alpha: number
         ): void;
         drawTextureTiledY(
-            texture: zombie.core.textures.Texture | null,
+            texture: Texture,
             x: number,
             y: number,
             width: number,
@@ -349,14 +331,9 @@ declare module 'ISUI' {
             blue: number,
             alpha: number
         ): void;
-        DrawTextureAngle(
-            texture: zombie.core.textures.Texture | null,
-            centerX: number,
-            centerY: number,
-            angle: number
-        ): void;
+        DrawTextureAngle(texture: Texture, centerX: number, centerY: number, angle: number): void;
         drawTextureScaledStatic(
-            texture: zombie.core.textures.Texture | null,
+            texture: Texture,
             x: number,
             y: number,
             width: number,
@@ -367,7 +344,7 @@ declare module 'ISUI' {
             blue: number
         ): void;
         drawTextureStatic(
-            texture: zombie.core.textures.Texture | null,
+            texture: Texture,
             x: number,
             y: number,
             alpha: number,
@@ -434,7 +411,7 @@ declare module 'ISUI' {
             green: number,
             blue: number,
             alpha: number,
-            font: zombie.ui.UIFont
+            font: UIFont
         ): void;
         drawTextUntrimmed(
             text: string,
@@ -444,7 +421,7 @@ declare module 'ISUI' {
             green: number,
             blue: number,
             alpha: number,
-            font: zombie.ui.UIFont
+            font: UIFont
         ): void;
         drawTextCentre(
             text: string,
@@ -454,7 +431,7 @@ declare module 'ISUI' {
             green: number,
             blue: number,
             alpha: number,
-            font: zombie.ui.UIFont
+            font: UIFont
         ): void;
         drawText(
             text: string,
@@ -464,7 +441,7 @@ declare module 'ISUI' {
             green: number,
             blue: number,
             alpha: number,
-            font: zombie.ui.UIFont
+            font: UIFont
         ): void;
         drawTextRight(
             text: string,
@@ -474,7 +451,7 @@ declare module 'ISUI' {
             green: number,
             blue: number,
             alpha: number,
-            font: zombie.ui.UIFont
+            font: UIFont
         ): void;
         setAlwaysOnTop(flag: boolean): void;
         drawTextStatic(
@@ -485,7 +462,7 @@ declare module 'ISUI' {
             green: number,
             blue: number,
             alpha: number,
-            font: zombie.ui.UIFont
+            font: UIFont
         ): void;
         drawTextCentreStatic(
             text: string,
@@ -495,7 +472,7 @@ declare module 'ISUI' {
             green: number,
             blue: number,
             alpha: number,
-            font: zombie.ui.UIFont
+            font: UIFont
         ): void;
         drawTextStatic(
             text: string,
@@ -505,7 +482,7 @@ declare module 'ISUI' {
             green: number,
             blue: number,
             alpha: number,
-            font: zombie.ui.UIFont
+            font: UIFont
         ): void;
         drawTextRightStatic(
             text: string,
@@ -515,7 +492,7 @@ declare module 'ISUI' {
             green: number,
             blue: number,
             alpha: number,
-            font: zombie.ui.UIFont
+            font: UIFont
         ): void;
         addToUIManager(): void;
         removeFromUIManager(): void;
@@ -586,16 +563,9 @@ declare module 'ISUI' {
          * @param width (double)
          * @param height (double)
          * @param value (0.0 to 1.0)
-         * @param foreground (Color -> {r: number (red), g: number (green), b: number (blue), a: number (alpha)})
+         * @param foreground RGBA
          */
-        drawProgressBar(
-            x: number,
-            y: number,
-            width: number,
-            height: number,
-            value: number,
-            foreground: { r: number; g: number; b: number; a: number }
-        ): void;
+        drawProgressBar(x: number, y: number, width: number, height: number, value: number, foreground: RGBA): void;
         /** @param playerNum (int) */
         stayOnSplitScreen(playerNum: number): void;
         setWantKeyEvents(want: boolean): void;
