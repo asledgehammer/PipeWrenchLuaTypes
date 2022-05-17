@@ -1,10 +1,12 @@
-declare module 'ISUI' {
-    import { zombie } from 'Zomboid';
+import { zombie } from 'Zomboid';
+type IsoPlayer = zombie.characters.IsoPlayer;
+type IsoZombie = zombie.characters.IsoZombie;
 
+declare module 'ISUI' {
     export class InterpolationPeriodDebugInstance extends ISCollapsableWindowInstance {
         protected constructor();
 
-        player: zombie.characters.IsoPlayer;
+        player: IsoPlayer;
         playerNum: number;
         borderColor: { r: number; g: number; b: number; a: number };
         backgroundColor: { r: number; g: number; b: number; a: number };
@@ -18,7 +20,7 @@ declare module 'ISUI' {
         richtext: string | null;
         overrideBPrompt: boolean;
         subFocus: any | null;
-        zombie: zombie.characters.IsoZombie | null;
+        zombie: IsoZombie | null;
         hotKeyPanels: any | null;
         isJoypadWindow: boolean;
         hourStamp: number;
@@ -27,7 +29,7 @@ declare module 'ISUI' {
         year: number;
         zombieInfo: any | null;
 
-        OnOpenPanel(zombie: zombie.characters.IsoZombie): InterpolationPeriodDebugInstance;
+        OnOpenPanel(zombie: IsoZombie): InterpolationPeriodDebugInstance;
         addLabel(curX: number, curY: number, labelID: number, title: string): number;
         addLabelValue(
             curX: number,
@@ -53,7 +55,7 @@ declare module 'ISUI' {
 
     export class InterpolationPeriodDebug {
         private constructor();
-        
+
         /**
          * @param x (double)
          * @param y (double)
@@ -66,7 +68,7 @@ declare module 'ISUI' {
             y: number,
             width: number,
             height: number,
-            player: zombie.characters.IsoPlayer
+            player: IsoPlayer
         ): InterpolationPeriodDebugInstance;
     }
 }
