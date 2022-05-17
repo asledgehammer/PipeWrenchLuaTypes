@@ -1,9 +1,11 @@
-import { zombie } from "Zomboid";
+import { zombie } from 'Zomboid';
 type Texture = zombie.core.textures.Texture;
 type UIFont = zombie.ui.UIFont;
 type UITransition = zombie.ui.UITransition;
 
 declare module 'ISUI' {
+    export type ISComboBoxOnChangeFunction = (target: any, combo: ISComboBoxInstance, arg1: any, arg2: any) => void;
+
     export class ISComboBoxInstance extends ISPanelInstance {
         protected constructor();
 
@@ -11,11 +13,11 @@ declare module 'ISUI' {
         font: UIFont;
         fade: UITransition;
         textColor: RGBA;
-        onChange: Function;
+        onChange: ISComboBoxOnChangeFunction;
         onChangeArgs: any[];
         options: any[];
         target: any;
-        tooltip: string | null;
+        tooltip: string;
         baseHeight: number;
         selected: number;
         expanded: boolean;
@@ -33,16 +35,16 @@ declare module 'ISUI' {
         addOption(option: any): void;
         addOptionWithData(option: any, data: any): void;
         contains(text: string): boolean;
-        getOptionText(index: number): string | any | null;
-        getOptionTooltip(index: number): string | null;
+        getOptionText(index: number): any;
+        getOptionTooltip(index: number): string;
         setToolTipMap(tooltipmap: any): void;
-        getSelectedText(): string | null;
+        getSelectedText(): string;
         setWidthToOptions(minWidth: number): void;
         clear(): void;
         setEditable(editable: boolean): void;
         isEditable(): boolean;
         setFilterText(text: string): void;
-        getFilterText(): string | null;
+        getFilterText(): string;
         hasFilterText(): boolean;
     }
 
@@ -55,7 +57,7 @@ declare module 'ISUI' {
             width: number,
             height: number,
             target: any,
-            onChange: Function,
+            onChange: ISComboBoxOnChangeFunction,
             onChangeArg1: any,
             onChangeArg2: any
         ): ISComboBoxInstance;
