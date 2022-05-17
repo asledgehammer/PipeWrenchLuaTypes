@@ -29,6 +29,7 @@ Exports.ISEquippedItem = loadstring('return ISEquippedItem')();
 
 Exports.ISLabel = loadstring('return ISLabel')();
 Exports.ISModalDialog = loadstring('return ISModalDialog')();
+Exports.ISMoveablesIconPopup = loadstring('return ISMoveablesIconPopup')();
 Exports.ISPanel = loadstring('return ISPanel')();
 Exports.ISPanelJoypad = loadstring('return ISPanelJoypad')();
 Exports.ISRadialMenu = loadstring('return ISRadialMenu')();
