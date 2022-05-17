@@ -1,4 +1,4 @@
-import { zombie } from "Zomboid";
+import { zombie } from 'Zomboid';
 type InventoryItem = zombie.inventory.InventoryItem;
 
 declare module 'ISUI' {
