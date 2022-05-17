@@ -1,15 +1,14 @@
 declare module 'ISUI' {
-
     export type ISModalDialogOnClick = (target: any, button: ISButtonInstance, param1: any, param2: any) => void;
 
     export class ISModalDialogInstance extends ISPanelJoypadInstance {
         protected constructor();
 
-        name: string | null;
-        text: string | null;
+        onclick: ISModalDialogOnClick;
+        name: string;
+        text: string;
         yesno: boolean;
         target: any;
-        onclick: ISModalDialogOnClick;
         yes: ISButtonInstance;
         no: ISButtonInstance;
         ok: ISButtonInstance;
@@ -37,6 +36,6 @@ declare module 'ISUI' {
             param2: any
         ): ISModalDialogInstance;
 
-        static CalcSize(width: number, height: number, text: string): {width: number, height: number};
+        static CalcSize(width: number, height: number, text: string): { width: number; height: number };
     }
 }
