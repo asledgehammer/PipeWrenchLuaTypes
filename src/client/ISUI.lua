@@ -16,6 +16,7 @@ Exports.ISComboBox = loadstring('return ISComboBox')();
 Exports.ISComboBoxEditor = loadstring('return ISComboBoxEditor')();
 Exports.ISComboBoxPopup = loadstring('return ISComboBoxPopup')();
 Exports.ISConfirmMonitorSettingsDialog = loadstring('return ISConfirmMonitorSettingsDialog')();
+Exports.ISContextMenu = loadstring('return ISContextMenu')();
 
 Exports.ISLabel = loadstring('return ISLabel')();
 Exports.ISModalDialog = loadstring('return ISModalDialog')();
