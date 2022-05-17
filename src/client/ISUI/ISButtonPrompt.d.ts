@@ -9,7 +9,6 @@ type BaseVehicle = zombie.vehicles.BaseVehicle;
 type VehiclePart = zombie.vehicles.VehiclePart;
 
 declare module 'ISUI' {
-
     export class ISButtonPromptInstance extends ISUIElementInstance {
         protected constructor();
 
@@ -20,7 +19,7 @@ declare module 'ISUI' {
         movableIconScrap: Texture;
         backgroundColor: RGBA;
         borderColor: RGBA;
-        player: number; 
+        player: number;
         buttonA: number;
         buttonB: number;
         buttonX: number;
@@ -87,7 +86,7 @@ declare module 'ISUI' {
         doBButtonDoorOrWindowOrWindowFrame(dir: IsoDirections, obj: IsoObject): void;
         getBestYButtonAction(dir: IsoDirections): void;
         getBestXButtonAction(dir: IsoDirections): void;
-        getXButtonObjects(dir: IsoDirections): IsoObject[] | null;
+        getXButtonObjects(dir: IsoDirections): IsoObject[];
         getBestLBButtonAction(dir: IsoDirections): void;
         getBestRBButtonAction(dir: IsoDirections): void;
         onAPress(): void;
