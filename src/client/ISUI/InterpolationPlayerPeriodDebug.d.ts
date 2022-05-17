@@ -1,7 +1,9 @@
-declare module 'ISUI' {
-    import { zombie } from 'Zomboid';
-    import { ValuePlotterInstance } from 'DebugUIs/DebugMenu';
+import { zombie } from 'Zomboid';
+type IsoPlayer = zombie.characters.IsoPlayer;
 
+import { ValuePlotterInstance } from 'DebugUIs/DebugMenu';
+
+declare module 'ISUI' {
     export type TitleValueLabelPair = {
         titleLabel: ISLabelInstance;
         valueLabel: ISLabelInstance;
@@ -15,21 +17,21 @@ declare module 'ISUI' {
         y: number;
         width: number;
         height: number;
-        player: zombie.characters.IsoPlayer | null;
+        player: IsoPlayer;
         playerNum: number;
-        borderColor: { r: number; g: number; b: number; a: number };
-        backgroundColor: { r: number; g: number; b: number; a: number };
-        greyCol: { r: number; g: number; b: number; a: number };
+        borderColor: RGBA;
+        backgroundColor: RGBA;
+        greyCol: RGBA;
         anchorLeft: boolean;
         anchorRight: boolean;
         anchorTop: boolean;
         anchorBottom: boolean;
-        isCollapsed: boolean | null;
-        collapseCounter: number | null;
-        title: string | null;
-        resizable: boolean | null;
-        drawFrame: boolean | null;
-        richtext: string | null;
+        isCollapsed: boolean;
+        collapseCounter: number;
+        title: string;
+        resizable: boolean;
+        drawFrame: boolean;
+        richtext: string;
         overrideBPrompt: boolean;
         isJoypadWindow: boolean;
         hourStamp: number;
@@ -43,24 +45,19 @@ declare module 'ISUI' {
                 desc: string;
                 min: number;
                 max: number;
-                func: any,
-                col: { r: number; g: number; b: number; a: number };
-            }
+                func: any;
+                col: RGBA;
+            };
         };
-        colInfo: {[offset: number]: {
-            r: number,
-            g: number,
-            b: number,
-            a: number
-        }};
+        colInfo: { [offset: number]: RGBA };
         clearOnNextRun: boolean;
 
         // Unknown & Undefined Properties
         hotKeyPanels: any;
         playerInfo: any;
-        subFocus: null;
-        currentTile: null;
-        currentStage: null;
+        subFocus: any;
+        currentTile: any;
+        currentStage: any;
         /////////////////////////////////
 
         initialise(): void;
@@ -75,8 +72,8 @@ declare module 'ISUI' {
             title: string,
             defaultValue: number
         ): number;
-        getTitleLabel(labelID: string): ISLabelInstance | null;
-        getValueLabel(labelID: string): ISLabelInstance | null;
+        getTitleLabel(labelID: string): ISLabelInstance;
+        getValueLabel(labelID: string): ISLabelInstance;
         initVariables(): void;
         addColor(red: number, green: number, blue: number): void;
         addVarInfo(name: string, description: string, min: number, max: number, func: any): void;
@@ -88,7 +85,7 @@ declare module 'ISUI' {
         prerender(): void;
         stayOnSplitScreen(): void;
         render(): void;
-        setPlayer(player: zombie.characters.IsoPlayer): void;
+        setPlayer(player: IsoPlayer): void;
         close(): void;
         clear(): void;
     }
@@ -107,9 +104,9 @@ declare module 'ISUI' {
             y: number,
             width: number,
             height: number,
-            player: zombie.characters.IsoPlayer
+            player: IsoPlayer
         ): InterpolationPlayerPeriodDebugInstance;
 
-        static OnOpenPanel(player: zombie.characters.IsoPlayer): InterpolationPlayerPeriodDebugInstance;
+        static OnOpenPanel(player: IsoPlayer): InterpolationPlayerPeriodDebugInstance;
     }
 }
