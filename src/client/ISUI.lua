@@ -20,6 +20,7 @@ Exports.ISContextMenu = loadstring('return ISContextMenu')();
 Exports.ISControllerTestPanel = loadstring('return ISControllerTestPanel')();
 Exports.ISCraftingCategoryUI = loadstring('return ISCraftingCategoryUI')();
 Exports.ISCraftingUI = loadstring('return ISCraftingUI')();
+Exports.ISDemoPopup = loadstring('return ISDemoPopup')();
 
 Exports.ISLabel = loadstring('return ISLabel')();
 Exports.ISModalDialog = loadstring('return ISModalDialog')();
