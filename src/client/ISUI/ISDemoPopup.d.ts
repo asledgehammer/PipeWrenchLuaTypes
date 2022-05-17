@@ -9,8 +9,6 @@ declare module 'ISUI' {
 
         setInfo(item: any /* Unused */): void;
         removeSelf(): void;
-        
-        
     }
 
     export class ISDemoPopup {
