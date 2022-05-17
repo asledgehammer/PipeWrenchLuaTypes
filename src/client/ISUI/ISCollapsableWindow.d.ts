@@ -1,39 +1,41 @@
-declare module 'ISUI' {
-    import { zombie } from 'Zomboid';
+import { zombie } from 'Zomboid';
+type Texture = zombie.core.textures.Texture;
+type UIFont = zombie.ui.UIFont;
 
+declare module 'ISUI' {
     export class ISCollapsableWindowInstance extends ISPanelInstance {
         protected constructor();
 
-        title: string | null;
-        resizable: boolean | null;
-        resizeWidget: ISResizeWidgetInstance | null;
-        resizeWidget2: ISResizeWidgetInstance | null;
+        title: string;
+        resizable: boolean;
+        resizeWidget: ISResizeWidgetInstance;
+        resizeWidget2: ISResizeWidgetInstance;
         closeButton: ISButtonInstance;
-        closeButtonTexture: zombie.core.textures.Texture;
-        backgroundColorMouseOver: { r: number; g: number; b: number; a: number };
+        closeButtonTexture: Texture;
+        backgroundColorMouseOver: RGBA;
         infoButton: ISButtonInstance;
-        infoBtn: zombie.core.textures.Texture;
+        infoBtn: Texture;
         infoRichText: ISModalRichTextInstance;
-        infoText: string | null;
+        infoText: string;
         pinButton: ISButtonInstance;
-        pinButtonTexture: zombie.core.textures.Texture;
+        pinButtonTexture: Texture;
         collapseButton: ISButtonInstance;
-        collapseButtonTexture: zombie.core.textures.Texture;
-        isCollapsed: boolean | null;
-        collapseCounter: number | null;
-        drawFrame: boolean | null;
-        titlebarbkg: zombie.core.textures.Texture;
-        statusbarbkg: zombie.core.textures.Texture;
-        resizeimage: zombie.core.textures.Texture;
-        invbasic: zombie.core.textures.Texture;
-        clearStencil: boolean | null;
-        titleFont: zombie.ui.UIFont;
-        titleFontHgt: number | null;
-        widgetTextureColor: { r: number; g: number; b: number; a: number };
+        collapseButtonTexture: Texture;
+        isCollapsed: boolean;
+        collapseCounter: number;
+        drawFrame: boolean;
+        titlebarbkg: Texture;
+        statusbarbkg: Texture;
+        resizeimage: Texture;
+        invbasic: Texture;
+        clearStencil: boolean;
+        titleFont: UIFont;
+        titleFontHgt: number;
+        widgetTextureColor: RGBA;
 
-        setTitle(title: string | null): void;
-        getTitle(): string | null;
-        setInfo(text: string | null): void;
+        setTitle(title: string): void;
+        getTitle(): string;
+        setInfo(text: string): void;
         onInfo(): void;
         close(): void;
         collapse(): void;
@@ -53,8 +55,6 @@ declare module 'ISUI' {
     export class ISCollapsableWindow {
         private constructor();
 
-        static TitleBarHeight(): number;
-        
         static new(
             x: number,
             y: number,
@@ -63,5 +63,7 @@ declare module 'ISUI' {
             resizeTarget: ISUIElementInstance,
             yonly: boolean
         ): ISCollapsableWindowInstance;
+
+        static TitleBarHeight(): number;
     }
 }
