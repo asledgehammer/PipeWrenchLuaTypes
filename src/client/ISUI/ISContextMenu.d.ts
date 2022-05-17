@@ -49,7 +49,7 @@ declare module 'ISUI' {
         numOptions: number;
         visibleCheck: boolean;
         forceVisible: boolean;
-        toolTip: string | null;
+        toolTip: string;
         subOptionNums: number;
         player: number;
         scrollIndicatorHgt: number;
@@ -58,11 +58,10 @@ declare module 'ISUI' {
         tickTexture: Texture;
         mouseOut: boolean;
         instanceMap: ISContextMenuInstance[];
-        subInstance: ISContextMenuInstance | null;
-        subMenu: ISContextMenuInstance | null;
+        subInstance: ISContextMenuInstance;
+        subMenu: ISContextMenuInstance;
 
         isMouseOut(): boolean;
-
         hideSelfAndChildren2(): void;
         ensureVisible(): void;
         hideSelf(): void;
@@ -86,7 +85,7 @@ declare module 'ISUI' {
         getRootY(): number;
         getItemY(index: number): number;
         getIndexAt(x: number, y: number): number;
-        topmostMenuWithMouse(x: number, y: number): ISContextMenuInstance | null;
+        topmostMenuWithMouse(x: number, y: number): ISContextMenuInstance;
         allocOption(
             name: string,
             target: any,
@@ -102,7 +101,6 @@ declare module 'ISUI' {
             param9: any,
             param10: any
         ): ISContextMenuOption;
-
         addOption(
             name: string,
             target: any,
