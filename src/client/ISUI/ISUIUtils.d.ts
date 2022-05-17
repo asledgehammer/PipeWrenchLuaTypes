@@ -14,4 +14,10 @@ declare module 'ISUI' {
         s: number,
         b: number
     };
+
+    export type JoyFocus = {
+        focus: ISUIElementInstance;
+        isActive: boolean;
+        id: number;
+    };
 }
