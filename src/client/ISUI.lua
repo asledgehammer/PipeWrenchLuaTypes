@@ -26,6 +26,7 @@ Exports.ISDPadWheels = loadstring('return ISDPadWheels')();
 Exports.ISDuplicateKeybindDialog = loadstring('return ISDuplicateKeybindDialog')();
 Exports.ISEmoteRadialMenu = loadstring('return ISEmoteRadialMenu')();
 Exports.ISEquippedItem = loadstring('return ISEquippedItem')();
+Exports.ISFirearmRadialMenu = loadstring('return ISFirearmRadialMenu')();
 
 Exports.ISLabel = loadstring('return ISLabel')();
 Exports.ISMapsPopup = loadstring('return ISMapsPopup')();
