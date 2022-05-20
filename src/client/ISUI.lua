@@ -35,6 +35,7 @@ Exports.ISGameLoadingUI = loadstring('return ISGameLoadingUI')();
 Exports.ISGameSoundVolumeControl = loadstring('return ISGameSoundVolumeControl')();
 Exports.ISGarmentUI = loadstring('return ISGarmentUI')();
 Exports.ISGeneratorInfoWindow = loadstring('return ISGeneratorInfoWindow')();
+Exports.ISGradientBar = loadstring('return ISGradientBar')();
 
 Exports.ISLabel = loadstring('return ISLabel')();
 Exports.ISMapsPopup = loadstring('return ISMapsPopup')();
