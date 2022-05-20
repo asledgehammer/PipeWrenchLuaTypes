@@ -37,7 +37,8 @@ declare module 'ISUI' {
         insertNewListOfButtons(list: { [offset: number]: ISButtonInstance }): void;
         insertNewListOfButtonsList(list: { [offset: number]: ISButtonInstance }): void;
         noBackground(): void;
-        close(): void;
+        /** Upstream compatability with ISFishingUI */
+        close: (()=> void) | any;
         setISButtonForA(button: ISButtonInstance): void;
         setISButtonForB(button: ISButtonInstance): void;
         setISButtonForY(button: ISButtonInstance): void;
