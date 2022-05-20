@@ -38,6 +38,7 @@ Exports.ISGeneratorInfoWindow = loadstring('return ISGeneratorInfoWindow')();
 Exports.ISGradientBar = loadstring('return ISGradientBar')();
 Exports.ISImage = loadstring('return ISImage')();
 Exports.ISInfoContainer = loadstring('return ISInfoContainer')();
+Exports.ISInventoryPage = loadstring('return ISInventoryPage')();
 
 Exports.ISLabel = loadstring('return ISLabel')();
 Exports.ISMapsPopup = loadstring('return ISMapsPopup')();
