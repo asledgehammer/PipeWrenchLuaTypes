@@ -33,7 +33,7 @@ Exports.ISFishingUI = loadstring('return ISFishingUI')();
 Exports.ISFitnessUI = loadstring('return ISFitnessUI')();
 Exports.ISGameLoadingUI = loadstring('return ISGameLoadingUI')();
 Exports.ISGameSoundVolumeControl = loadstring('return ISGameSoundVolumeControl')();
-
+Exports.ISGarmentUI = loadstring('return ISGarmentUI')();
 Exports.ISLabel = loadstring('return ISLabel')();
 Exports.ISMapsPopup = loadstring('return ISMapsPopup')();
 Exports.ISModalDialog = loadstring('return ISModalDialog')();
