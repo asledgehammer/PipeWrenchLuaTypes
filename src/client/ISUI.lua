@@ -40,6 +40,8 @@ Exports.ISImage = loadstring('return ISImage')();
 Exports.ISInfoContainer = loadstring('return ISInfoContainer')();
 Exports.ISInventoryPage = loadstring('return ISInventoryPage')();
 Exports.ISInventoryPane = loadstring('return ISInventoryPane')();
+Exports.ISInventoryPaneContextMenu = loadstring('return ISInventoryPaneContextMenu')();
+
 
 Exports.ISLabel = loadstring('return ISLabel')();
 Exports.ISMapsPopup = loadstring('return ISMapsPopup')();
