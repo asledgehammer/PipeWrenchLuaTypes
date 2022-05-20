@@ -29,7 +29,6 @@ declare module 'ISUI' {
         zoneProgress: number;
         /** Note: Possibly typed wrong in Lua code. */
         joyfocus: any;
-        ISButtonA: ISButtonInstance;
         checkStuffTime: number;
         containers: ItemContainer[];
         canFishDistance: boolean;
