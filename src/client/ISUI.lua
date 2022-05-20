@@ -29,6 +29,7 @@ Exports.ISEquippedItem = loadstring('return ISEquippedItem')();
 Exports.ISFirearmRadialMenu = loadstring('return ISFirearmRadialMenu')();
 Exports.ISFireplaceInfoWindow = loadstring('return ISFireplaceInfoWindow')();
 Exports.ISFireplaceWindow = loadstring('return ISFireplaceWindow')();
+Exports.ISFishingUI = loadstring('return ISFishingUI')();
 
 Exports.ISLabel = loadstring('return ISLabel')();
 Exports.ISMapsPopup = loadstring('return ISMapsPopup')();
