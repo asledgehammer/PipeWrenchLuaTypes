@@ -1,4 +1,5 @@
-import { zombie } from 'Zomboid';
+import { java, zombie } from 'Zomboid';
+type ArrayList<E> = java.util.ArrayList<E>;
 type BodyPart = zombie.characters.BodyDamage.BodyPart;
 type IsoPlayer = zombie.characters.IsoPlayer;
 type WeaponPart = zombie.inventory.types.WeaponPart;
@@ -20,8 +21,79 @@ type Fixer = zombie.scripting.objects.Fixing$Fixer;
 type VehiclePart = zombie.vehicles.VehiclePart;
 type IsoTrap = zombie.iso.objects.IsoTrap;
 type Recipe = zombie.scripting.objects.Recipe;
+type Texture = zombie.core.textures.Texture;
+type RecipeSource = zombie.scripting.objects.Recipe$Source;
 
 declare module 'ISUI' {
+    type CraftTooltipContent = {
+        type: 'text' | 'image';
+
+        // Common
+        x: number;
+        y: number;
+        width: number;
+        height: number;
+
+        // Text-Specific
+        text?: string;
+        r?: number;
+        g?: number;
+        b?: number;
+
+        // Image-Specific
+        texture?: Texture;
+    };
+    type CraftTooltipTextContent = RGB & {
+        type: string;
+        x: number;
+        y: number;
+        width: number;
+        height: number;
+        text: string;
+    };
+
+    type CraftTooltipImageContent = {
+        type: string;
+        x: number;
+        y: number;
+        width: number;
+        height: number;
+        texture: Texture;
+    };
+
+    class CraftTooltipInstance {
+        protected constructor();
+
+        contents: CraftTooltipContent[];
+        playerNum: number;
+        character: IsoPlayer;
+        containerList: ArrayList<ItemContainer>;
+        typesAvailable: { [id: string]: number };
+        recipe: Recipe;
+
+        addText(x: number, y: number, text: string, red: number, green: number, blue: number): void;
+        addImage(x: number, y: number, textureName: string): void;
+        getSingleSourceText(source: RecipeSource): string;
+        /** @returns true if item2's type is in item1's getClothingExtraItem() list. */
+        isExtraClothingItemOf(item1: InventoryItem, item2: InventoryItem): boolean;
+        isWaterSource(item: InventoryItem, count: number): boolean;
+        getContainers(): void;
+        getAvailableItemsType(): void;
+        layoutContents(x: number, y: number): { width: number; height: number };
+        renderContents(): void;
+        reset(): void;
+    }
+    class CraftTooltip {
+        private constructor();
+
+        static tooltipPool: any; /* Unknown */
+        static tooltipsUsed: any; /* Unknown */
+
+        static new(): CraftTooltipInstance;
+        static addToolTip(): any; /* Unknown */
+        static releaseAll(): void;
+    }
+
     export class ISInventoryPaneContextMenuInstance {
         protected constructor();
 
