@@ -44,6 +44,7 @@ Exports.ISInventoryPaneContextMenu = loadstring('return ISInventoryPaneContextMe
 Exports.ISJoystickButtonRadialMenu = loadstring('return ISJoystickButtonRadialMenu')();
 Exports.ISLabel = loadstring('return ISLabel')();
 Exports.ISLayoutManager = loadstring('return ISLayoutManager')();
+Exports.ISLcdBar = loadstring('return ISLcdBar')();
 
 Exports.ISMapsPopup = loadstring('return ISMapsPopup')();
 Exports.ISModalDialog = loadstring('return ISModalDialog')();
