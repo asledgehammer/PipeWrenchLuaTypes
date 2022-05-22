@@ -54,6 +54,7 @@ Exports.ISMegaVolumeControl = loadstring('return ISMegaVolumeControl')();
 Exports.ISMapsPopup = loadstring('return ISMapsPopup')();
 Exports.ISModalDialog = loadstring('return ISModalDialog')();
 Exports.ISModalRichText = loadstring('return ISModalRichText')();
+Exports.ISMouseDrag = loadstring('return ISMouseDrag')();
 
 Exports.ISMoveablesIconPopup = loadstring('return ISMoveablesIconPopup')();
 Exports.ISPanel = loadstring('return ISPanel')();
