@@ -50,6 +50,7 @@ Exports.ISLiteratureUI = loadstring('return ISLiteratureUI')();
 Exports.ISLiteratureList = loadstring('return ISLiteratureList')();
 Exports.ISLiteratureMediaList = loadstring('return ISLiteratureMediaList')();
 Exports.ISMakeUpUI = loadstring('return ISMakeUpUI')();
+Exports.ISMegaVolumeControl = loadstring('return ISMegaVolumeControl')();
 
 Exports.ISMapsPopup = loadstring('return ISMapsPopup')();
 Exports.ISModalDialog = loadstring('return ISModalDialog')();
