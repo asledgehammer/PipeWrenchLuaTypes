@@ -48,6 +48,7 @@ Exports.ISLcdBar = loadstring('return ISLcdBar')();
 Exports.ISLightSourceRadialMenu = loadstring('return ISLightSourceRadialMenu')();
 Exports.ISLiteratureUI = loadstring('return ISLiteratureUI')();
 Exports.ISLiteratureList = loadstring('return ISLiteratureList')();
+Exports.ISLiteratureMediaList = loadstring('return ISLiteratureMediaList')();
 
 Exports.ISMapsPopup = loadstring('return ISMapsPopup')();
 Exports.ISModalDialog = loadstring('return ISModalDialog')();
