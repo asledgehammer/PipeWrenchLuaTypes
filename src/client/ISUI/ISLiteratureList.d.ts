@@ -1,4 +1,5 @@
 import { zombie } from 'Zomboid';
+type IsoPlayer = zombie.characters.IsoPlayer;
 
 declare module 'ISUI' {
     export class ISListeratureListInstance extends ISScrollingListBoxInstance {
@@ -8,6 +9,12 @@ declare module 'ISUI' {
     export class ISListeratureList {
         private constructor();
 
-        static new(): ISListeratureListInstance;
+        static new(
+            x: number,
+            y: number,
+            width: number,
+            height: number,
+            character: IsoPlayer
+        ): ISListeratureListInstance;
     }
 }
