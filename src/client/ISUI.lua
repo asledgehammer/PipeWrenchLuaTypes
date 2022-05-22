@@ -59,6 +59,7 @@ Exports.ISRadialMenu = loadstring('return ISRadialMenu')();
 Exports.ISRect = loadstring('return ISRect')();
 Exports.ISResizeWidget = loadstring('return ISResizeWidget')();
 Exports.ISScrollBar = loadstring('return ISScrollBar')();
+Exports.ISScrollingListBox = loadstring('return ISScrollingListBox')();
 Exports.ISTextEntryBox = loadstring('return ISTextEntryBox')();
 Exports.ISUIElement = loadstring('return ISUIElement')();
 return Exports
