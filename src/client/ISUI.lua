@@ -59,6 +59,7 @@ Exports.ISMoveableInfoWindow = loadstring('return ISMoveableInfoWindow')();
 Exports.ISMoveablesIconPopup = loadstring('return ISMoveablesIconPopup')();
 Exports.ISNewsUpdate = loadstring('return ISNewsUpdate')();
 Exports.ISOnScreenKeyboard = loadstring('return ISOnScreenKeyboard')();
+Exports.ISOptionPanel = loadstring('return ISOptionPanel')();
 
 Exports.ISPanel = loadstring('return ISPanel')();
 Exports.ISPanelJoypad = loadstring('return ISPanelJoypad')();
