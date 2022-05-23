@@ -30,7 +30,7 @@ declare module 'ISUI' {
         playerNum: number;
 
         instantiate(): void;
-        onMouseDownOutside(x: number, y: number): void;
+
         clear(): void;
         addSlice(
             text: string,
@@ -47,8 +47,6 @@ declare module 'ISUI' {
         setSliceTexture(sliceIndex: number, texture: Texture): void;
         getSliceCommand(sliceIndex: number): ISRadialMenuSliceCommand;
         center(): void;
-        onGainJoypadFocus(joypadData: any): void;
-        onJoypadDown(button: ISButtonInstance, joypadData: any): void;
         setHideWhenButtonReleased(button: ISButtonInstance): void;
         undisplay(): void;
     }
