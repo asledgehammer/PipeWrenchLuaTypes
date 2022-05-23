@@ -71,4 +71,6 @@ Exports.ISTextEntryBox = loadstring('return ISTextEntryBox')();
 Exports.ISUIElement = loadstring('return ISUIElement')();
 
 Exports.OnScreenKeyboardEntry = loadstring('return OnScreenKeyboardEntry')();
+Exports.OnScreenKeyboardPanel = loadstring('return OnScreenKeyboardPanel')();
+
 return Exports
