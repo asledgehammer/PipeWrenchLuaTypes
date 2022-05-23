@@ -56,8 +56,9 @@ Exports.ISModalDialog = loadstring('return ISModalDialog')();
 Exports.ISModalRichText = loadstring('return ISModalRichText')();
 Exports.ISMouseDrag = loadstring('return ISMouseDrag')();
 Exports.ISMoveableInfoWindow = loadstring('return ISMoveableInfoWindow')();
-
 Exports.ISMoveablesIconPopup = loadstring('return ISMoveablesIconPopup')();
+Exports.ISNewsUpdate = loadstring('return ISNewsUpdate')();
+
 Exports.ISPanel = loadstring('return ISPanel')();
 Exports.ISPanelJoypad = loadstring('return ISPanelJoypad')();
 Exports.ISRadialMenu = loadstring('return ISRadialMenu')();
