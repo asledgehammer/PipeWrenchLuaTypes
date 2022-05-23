@@ -68,6 +68,7 @@ Exports.ISRadialProgressBar = loadstring('return ISRadialProgressBar')();
 Exports.ISRadioButtons = loadstring('return ISRadioButtons')();
 Exports.ISRadioOption = loadstring('return ISRadioOption')();
 Exports.ISRainPanel = loadstring('return ISRainPanel')();
+Exports.ISResizableButton = loadstring('return ISResizableButton')();
 
 Exports.ISRect = loadstring('return ISRect')();
 Exports.ISResizeWidget = loadstring('return ISResizeWidget')();
