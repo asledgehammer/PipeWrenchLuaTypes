@@ -70,6 +70,7 @@ Exports.ISScrollingListBox = loadstring('return ISScrollingListBox')();
 Exports.ISTextEntryBox = loadstring('return ISTextEntryBox')();
 Exports.ISUIElement = loadstring('return ISUIElement')();
 
+Exports.OnScreenKeyboard = loadstring('return OnScreenKeyboard')();
 Exports.OnScreenKeyboardEntry = loadstring('return OnScreenKeyboardEntry')();
 Exports.OnScreenKeyboardPanel = loadstring('return OnScreenKeyboardPanel')();
 
