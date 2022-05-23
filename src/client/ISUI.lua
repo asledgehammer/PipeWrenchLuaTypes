@@ -63,8 +63,8 @@ Exports.ISOptionPanel = loadstring('return ISOptionPanel')();
 Exports.ISPanel = loadstring('return ISPanel')();
 Exports.ISPanelJoypad = loadstring('return ISPanelJoypad')();
 Exports.ISPostDeathUI = loadstring('return ISPostDeathUI');
-
 Exports.ISRadialMenu = loadstring('return ISRadialMenu')();
+Exports.ISRadialProgressBar = loadstring('return ISRadialProgressBar')();
 
 Exports.ISRect = loadstring('return ISRect')();
 Exports.ISResizeWidget = loadstring('return ISResizeWidget')();
