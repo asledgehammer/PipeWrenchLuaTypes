@@ -62,7 +62,7 @@ Exports.ISOnScreenKeyboard = loadstring('return ISOnScreenKeyboard')();
 Exports.ISOptionPanel = loadstring('return ISOptionPanel')();
 Exports.ISPanel = loadstring('return ISPanel')();
 Exports.ISPanelJoypad = loadstring('return ISPanelJoypad')();
-
+Exports.ISPostDeathUI = loadstring('return ISPostDeathUI');
 
 Exports.ISRadialMenu = loadstring('return ISRadialMenu')();
 
