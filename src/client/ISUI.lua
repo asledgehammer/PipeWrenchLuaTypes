@@ -69,4 +69,6 @@ Exports.ISScrollBar = loadstring('return ISScrollBar')();
 Exports.ISScrollingListBox = loadstring('return ISScrollingListBox')();
 Exports.ISTextEntryBox = loadstring('return ISTextEntryBox')();
 Exports.ISUIElement = loadstring('return ISUIElement')();
+
+Exports.OnScreenKeyboardEntry = loadstring('return OnScreenKeyboardEntry')();
 return Exports
