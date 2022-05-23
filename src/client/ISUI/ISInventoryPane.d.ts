@@ -130,7 +130,6 @@ declare module 'ISUI' {
         doJoypadExpandCollapse(): void;
         doGrabOnJoypadSelected(): void;
         doContextOnJoypadSelected(): void;
-        onMouseDown(x: number, y: number): boolean;
         updateSmoothScrolling(): void;
         rendericons(): void;
         saveSelection(selected: InventoryItem[]): any /* Unknown */;

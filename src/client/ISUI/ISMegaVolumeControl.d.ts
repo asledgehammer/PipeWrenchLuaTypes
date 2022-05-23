@@ -20,7 +20,6 @@ declare module 'ISUI' {
         tooltipUI: ISToolTipInstance;
         tooltip: string;
 
-        onMouseDown(x: number, y: number): void;
         getVolumeAtX(x: number): number;
         getVolume(): number;
         setVolume(volume: number): void;

@@ -11,6 +11,7 @@ declare module 'ISUI' {
         moving: boolean;
         mouseOver: boolean;
 
+        onMouseDown(x: number, y: number): void;
         noBackground(): void;
         close(): void;
     }

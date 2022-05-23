@@ -30,7 +30,6 @@ declare module 'ISUI' {
         playerNum: number;
 
         instantiate(): void;
-        onMouseDown(x: number, y: number): void;
         onMouseDownOutside(x: number, y: number): void;
         clear(): void;
         addSlice(

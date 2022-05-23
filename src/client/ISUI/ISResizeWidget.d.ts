@@ -8,7 +8,6 @@ declare module 'ISUI' {
         resizing: boolean;
 
         resize(deltaX: number, deltaY: number): void;
-        onMouseDown(x: number, y: number): boolean | void;
     }
 
     export class ISResizeWidget {

@@ -41,7 +41,6 @@ declare module 'ISUI' {
         collapse(): void;
         pin(): void;
         uncollapse(): void;
-        onMouseDown(x: number, y: number): void;
         addView(view: ISUIElementInstance): void;
         getViews(): ISUIElementInstance[];
         titleBarHeight(): number;

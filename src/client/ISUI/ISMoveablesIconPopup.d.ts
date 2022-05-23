@@ -3,9 +3,6 @@ declare module 'ISUI' {
         protected constructor();
 
         owner: ISEquippedItemInstance;
-
-        onMouseDown(x: number, y: number): boolean;
-        onMouseUp(x: number, y: number): boolean;
     }
 
     export class ISMoveablesIconPopup {

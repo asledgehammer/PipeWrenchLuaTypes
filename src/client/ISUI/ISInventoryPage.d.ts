@@ -116,7 +116,6 @@ declare module 'ISUI' {
         selectContainer(button: ISButtonInstance): void;
         setNewContainer(inventory: any /* Unknown */): void;
         selectButtonForContainer(container: any /* Unknown */): void;
-        onMouseDown(x: number, y: number): void;
         isCycleContainerKeyDown(): boolean;
         onBackpackMouseDown(button: ISButtonInstance, x: number, y: number): void;
         onBackpackRightMouseDown(x: number, y: number): void;

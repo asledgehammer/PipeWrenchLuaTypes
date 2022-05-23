@@ -38,7 +38,6 @@ declare module 'ISUI' {
         offsetY: number;
         customBodyAlign: string;
 
-        onMouseDown(x: number, y: number): boolean;
         isMouseOverUI(): boolean;
         stayOnSplitScreen(): void;
         drawTexture(texture: Texture, x: number, y: number, alpha: number, red: number, green: number, blue: number): void;

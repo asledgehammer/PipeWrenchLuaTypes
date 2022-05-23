@@ -16,7 +16,6 @@ declare module 'ISUI' {
         tooltip: any; /* Multiple Types */
         gameSound: GameSound;
 
-        onMouseDown(x: number, y: number): void;
         getVolumeAtX(x: number): number;
         getVolume(): number;
         setVolume(volume: number): void;
