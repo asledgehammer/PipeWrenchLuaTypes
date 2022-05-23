@@ -51,7 +51,7 @@ Exports.ISLiteratureList = loadstring('return ISLiteratureList')();
 Exports.ISLiteratureMediaList = loadstring('return ISLiteratureMediaList')();
 Exports.ISMakeUpUI = loadstring('return ISMakeUpUI')();
 Exports.ISMegaVolumeControl = loadstring('return ISMegaVolumeControl')();
-Exports.ISMapsPopup = loadstring('return ISMapsPopup')();
+Exports.ISMapPopup = loadstring('return ISMapPopup')();
 Exports.ISModalDialog = loadstring('return ISModalDialog')();
 Exports.ISModalRichText = loadstring('return ISModalRichText')();
 Exports.ISMouseDrag = loadstring('return ISMouseDrag')();
@@ -60,9 +60,10 @@ Exports.ISMoveablesIconPopup = loadstring('return ISMoveablesIconPopup')();
 Exports.ISNewsUpdate = loadstring('return ISNewsUpdate')();
 Exports.ISOnScreenKeyboard = loadstring('return ISOnScreenKeyboard')();
 Exports.ISOptionPanel = loadstring('return ISOptionPanel')();
-
 Exports.ISPanel = loadstring('return ISPanel')();
 Exports.ISPanelJoypad = loadstring('return ISPanelJoypad')();
+
+
 Exports.ISRadialMenu = loadstring('return ISRadialMenu')();
 
 Exports.ISRect = loadstring('return ISRect')();
